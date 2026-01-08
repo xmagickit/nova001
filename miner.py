@@ -164,13 +164,13 @@ def select_diverse_subset(pool, top_95_smiles, subset_size=5, entropy_threshold=
 
 def main(config: dict):
     # ========== MINER B: MAXIMUM THROUGHPUT PARAMETERS ==========
-    base_n_samples = 2500  
+    base_n_samples = 1000  
     top_pool = pd.DataFrame(columns=["name", "smiles", "InChIKey", "score", "Target", "Anti"])
     rxn_id = int(config["allowed_reaction"].split(":")[-1])
     iteration = 0
     
-    mutation_prob = 0.5
-    elite_frac = 0.5
+    mutation_prob = 0.4
+    elite_frac = 0.6
     
     seen_inchikeys = set()
     seed_df = pd.DataFrame(columns=["name", "smiles", "InChIKey", "tanimoto_similarity"])
